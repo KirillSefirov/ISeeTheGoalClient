@@ -12,49 +12,26 @@
 	</head>
 	<body>
 	<script>
-		/*$(document).ready(function(){
-			$("button").click(function(){
-				$.setRequestHeader("Content-Type","application/json");
-				$.post("api/users",'{"Username":"' + Username.value + '","Password":"' + Password.value + '"}'
 
-				),
-				function(data,status){
-					alert("Data: " + data + "\nStatus: " + status);
-				}
-			});
-		});
-*/
 		$( document ).ready(function() {
 			$("button").click(function(){
 			$.ajax({
 				url:"http://localhost:32514/api/users",
 
 				type:"POST",
-
 				headers: {
-					"Accept" : "application/json; charset=utf-8",
-					"Content-Type": "application/json; charset=utf-8"
+				"Accept" : "application/json; charset=utf-8",
+				"Content-Type": "application/json; charset=utf-8"
+					},
+				data:'{"Username":"' + Username.value + '","Password":"' + Password.value + '"}',
+				success: function (data, status) {
+					console.log("Success!!");
+					console.log(data);
+					console.log(status);
 				},
-				data:{Username: Username.value,Password: Password.value}
-				//dataType:"json"
-			})
-				});
-		});
-		/*$( document ).ready(function() {
-			$("button").click(function(){
-				//$.ajax("http://iseethegoal.com",type="POST");
-				$.ajax("http://iseethegoal.com/api/users",
-
-					// if "type" variable is undefined, then "GET" method will be used
-						type="POST",
-						dataType="json",
-						data = {asdfa:"asdfasd"}
-				)
+				})
 			});
 		});
-*/
-
-
 
 	</script>
 

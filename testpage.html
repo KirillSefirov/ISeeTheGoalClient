@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-$("button").click(function(){
-	var jqxhr = $.post( "example.php", function() {
-	alert( "success" );
-	})
-});
-</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="bootstrap.css">
+
 </head>
 <body>
+
+
+
+$(document).ready(function(){
+$("button").click(function(){
+console.log("imhere")			;
+$.post("",
+{
+name: "KirillSefirov",
+city: "Vancouver"
+},
+function(data, status){
+alert("Data: " + data + "\nStatus: " + status);
+});
+});
+});
+
 
 <button>Send an HTTP GET request to a page and get the result back</button>
 

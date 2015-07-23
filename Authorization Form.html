@@ -4,53 +4,52 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="stylesheet" href="cssauthorization.css">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		
 		<title>I See the Goal</title>
-		<script>			
-			$(document).ready(function(){
-			$("button").click(function(){
-console.log("imhere")			;
-			$.post("iseegthegoal.com",
-					{
-						name: "KirillSefirov",
-						city: "Vancouver"
-					},
-					function(data, status){
-						alert("Data: " + data + "\nStatus: " + status);
-					});
-				});
-				});
-				
+
 			
-			
-		</script>
+
+
 	</head>
 	<body>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$.post("api/users",'{"Username":"' + Username.value + '","Password":"' + Password.value + '"}'
+
+				);
+			});
+		});
+	</script>
 
 
- 
-		<form class="form-control-static">
+ 		<div class="row">
+			<div class="col-sm-offset-4 col-sm-4 col-xs-offset-2 col-xs-5 col-lg-offset-4 col-lg-4">
+				<div class="row">
+					<div class="col-sm-offset-2 col-sm-9 col-lg-offset-3 col-lg-6">
+						<form>
+							<div class="form-group form-style">
+								<input class="input-group-lg form-control" type="text" placeholder="Username" id="Username">
+								<br>
+								<input class="input-group-lg form-control" type="password"  placeholder="Password" id="Password">
+								<br>
+								<button class="btn btn-lg btn-success form-control button-style" type="button">Who is John Galt?</button>
+							</div>
+						</form>
+					</div>
 
-		<input class="input-group-lg" type="text" left-side="100")>
-		<br><br>
-		<input class="textarea.input-group-lg" type="password" left-side="100")>
-		<br><br>
-  
-
-		<button class="btn btn-lg btn-success" type="button">Who is John Galt?</button>
-		
-		
+				</div>
+			</div>
+		</div>
 		
 		
 
 
     
 
-
-		</form>
-  
 
 	</body>
 </html>
